@@ -3,6 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	var y [8]string // An array of 8 strings
+	var y [8]string
 	fmt.Println(y)
 }

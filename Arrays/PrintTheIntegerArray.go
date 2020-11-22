@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	var x [5]int // An array of 5 integers
+	var x [5]int
 
 	x[0] = 100
 	x[1] = 101
