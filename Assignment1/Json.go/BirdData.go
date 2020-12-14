@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-)
+) 
 
 func main() {
 	birdData := map[string]interface{}{
