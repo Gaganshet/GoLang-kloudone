@@ -10,13 +10,13 @@ import (
 )
 
 func main() {
-        arguments := os.Args
-        if len(arguments) == 1 {
-                fmt.Println("Please provide port number")
+        arg := os.Args
+        if len(arg) == 1 {
+                fmt.Println("Enter port number")
                 return
         }
 
-        PORT := ":" + arguments[1]
+        PORT := ":" + arg[1]
         l, err := net.Listen("tcp", PORT)
         if err != nil {
                 fmt.Println(err)
@@ -37,11 +37,11 @@ func main() {
                         return
                 }
                 if strings.TrimSpace(string(netData)) == "STOP" {
-                        fmt.Println("Exiting TCP server!")
+                        fmt.Println("exiting TCP server!")
                         return
                 }
 
-                fmt.Print("-> ", string(netData))
+                fmt.Print("------> ", string(netData))
                 t := time.Now()
                 myTime := t.Format(time.RFC3339) + "\n"
                 c.Write([]byte(myTime))

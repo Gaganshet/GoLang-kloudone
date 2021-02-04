@@ -9,13 +9,13 @@ import (
 )
 
 func main() {
-        arguments := os.Args
-        if len(arguments) == 1 {
-                fmt.Println("Please provide host:port.")
+        arg := os.Args
+        if len(arg) == 1 {
+                fmt.Println("Enter host port number")
                 return
         }
 
-        CONNECT := arguments[1]
+        CONNECT := arg[1]
         c, err := net.Dial("tcp", CONNECT)
         if err != nil {
                 fmt.Println(err)
@@ -29,7 +29,7 @@ func main() {
                 fmt.Fprintf(c, text+"\n")
 
                 message, _ := bufio.NewReader(c).ReadString('\n')
-                fmt.Print("->: " + message)
+                fmt.Print("------>" + message)
                 if strings.TrimSpace(string(text)) == "STOP" {
                         fmt.Println("TCP client exiting...")
                         return
