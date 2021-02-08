@@ -41,7 +41,7 @@ func main() {
                         return
                 }
 
-                fmt.Print("------> ", string(netData))
+                fmt.Print("From Client---> ", string(netData))
                 t := time.Now()
                 myTime := t.Format(time.RFC3339) + "\n"
                 c.Write([]byte(myTime))
