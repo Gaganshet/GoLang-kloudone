@@ -82,9 +82,8 @@ func Store(conn net.Conn) {
 		default:
 
 			if _, ok := x[username]; ok {
-
 				x[username].PushBack(message)
-				fmt.Println("Messages From ", username, ":-")
+				fmt.Println("The Messages From ", username, "is")
 				for e := x[username].Front(); e != nil; e = e.Next() {
 					fmt.Print(e.Value)
 				}
